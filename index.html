@@ -13,102 +13,71 @@
     <link rel="stylesheet" href="estilos.css?v=3">
 </head>
 
-<body>
-
+<body> 
     <!-- HEADER -->
-    <header class="header">
+<header class="header-viaja">
+    <div class="contenedor nav-viaja">
 
-        <div class="contenedor navegacion">
+        <a href="#inicio" class="marca-viaja">
+            <strong>Viaja Mejor</strong>
+            <span>Guía para aprender a viajar</span>
+        </a>
 
-            <a href="#inicio" class="marca">
+        <nav class="menu-viaja" id="menu">
+            <a href="#inicio" class="activo">Inicio</a>
+            <a href="#aprender">Aprende</a>
+            <a href="#vuelos">Vuelos</a>
+            <a href="#seguridad">Seguridad</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#sobre">Sobre esta guía</a>
+        </nav>
 
-                <div class="marca-icono">
-                    V
-                </div>
+        <button class="menu-movil" id="menuMovil"
+                aria-label="Abrir menú">
+            ☰
+        </button>
 
-                <div class="marca-texto">
-                    <strong>VALMO</strong>
-                    <span>TOTAL SERVICES SAS</span>
-                </div>
+    </div>
+</header>
 
+
+<!-- HERO -->
+<section class="hero-viaja" id="inicio">
+
+    <img
+         src="imagenes/portada-viaje.jpg"
+         alt="Persona disfrutando de un destino de viaje"
+         class="hero-viaja-fondo"
+    >
+
+    <div class="hero-viaja-overlay"></div>
+
+    <div class="contenedor hero-viaja-contenido">
+
+        <span class="hero-viaja-etiqueta">
+            GUÍA PARA VIAJAR MEJOR
+        </span>
+
+        <h1>
+            El mundo está más<br>
+            <span>cerca de lo que imaginas.</span>
+        </h1>
+
+        <p>
+            Aquí comparto consejos, experiencias y herramientas
+            para ayudarte a comparar vuelos, planear mejor
+            y viajar con más seguridad.
+        </p>
+
+        <div class="hero-viaja-botones">
+
+            <a href="#aprender" class="boton-azul">
+                ✈ Aprender a viajar →
             </a>
 
-            <nav class="menu" id="menu">
-
-                <a href="#inicio">Inicio</a>
-                <a href="#aprender">Aprender</a>
-                <a href="#vuelos">Vuelos</a>
-                <a href="#seguridad">Viaje seguro</a>
-                <a href="#destinos">Destinos</a>
-                <a href="#contacto">Contacto</a>
-
-            </nav>
-
-            <button class="menu-movil" id="menuMovil" aria-label="Abrir menú">
-                ☰
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <main>
-
-        <!-- HERO -->
-<section class="hero" id="inicio">
-
-    <div class="contenedor">
-
-        <div class="hero-banner">
-
-            <img src="imagenes/portada.jpg"
-                 alt="Avión y experiencia de viaje"
-                 class="hero-fondo">
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-contenido">
-
-                <span class="hero-etiqueta">
-                    ✈ VIAJA INTELIGENTE
-                </span>
-
-                <h1>
-                    El mundo está
-                    <span>más cerca de lo</span>
-                    que imaginas.
-                </h1>
-
-                <p>
-                    Compara, aprende y toma mejores decisiones
-                    antes de cada viaje.
-                </p>
-
-                <a href="#aprender" class="hero-btn">
-                    Aprender a viajar →
-                </a>
-
-            </div>
-
-            <div class="hero-beneficios">
-
-                <div class="beneficio">
-                    <strong>Mejores decisiones</strong>
-                    <span>Consejos para ahorrar</span>
-                </div>
-
-                <div class="beneficio">
-                    <strong>Viaja más seguro</strong>
-                    <span>Información confiable</span>
-                </div>
-
-                <div class="beneficio">
-                    <strong>Destinos increíbles</strong>
-                    <span>Guías y recomendaciones</span>
-                </div>
-
-            </div>
+            <a href="#destinos" class="boton-borde">
+                ⌖ Explorar destinos
+            </a>
 
         </div>
 
@@ -116,6 +85,54 @@
 
 </section>
 
+
+<!-- BENEFICIOS -->
+<section class="beneficios-viaja">
+
+    <div class="contenedor beneficios-caja">
+
+        <a href="#vuelos" class="beneficio-viaja">
+            <div class="beneficio-circulo azul">✈</div>
+
+            <div>
+                <h3>Vuelos</h3>
+                <p>Aprende a comparar<br>precios y ahorrar.</p>
+            </div>
+        </a>
+
+
+        <a href="#aprender" class="beneficio-viaja">
+            <div class="beneficio-circulo verde">▣</div>
+
+            <div>
+                <h3>Equipaje</h3>
+                <p>Lleva solo lo necesario<br>y sin complicaciones.</p>
+            </div>
+        </a>
+
+
+        <a href="#seguridad" class="beneficio-viaja">
+            <div class="beneficio-circulo naranja">♢</div>
+
+            <div>
+                <h3>Viaje seguro</h3>
+                <p>Consejos para viajar<br>tranquilo y preparado.</p>
+            </div>
+        </a>
+
+
+        <a href="#destinos" class="beneficio-viaja">
+            <div class="beneficio-circulo morado">⌖</div>
+
+            <div>
+                <h3>Destinos</h3>
+                <p>Descubre lugares<br>increíbles paso a paso.</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
 
         <!-- APRENDER -->
         <section class="seccion aprender" id="aprender">
@@ -488,108 +505,110 @@
 
         </section>
 
+ <section class="seccion sobre-guia" id="sobre">
+    <div class="contenedor">
 
-        <!-- CONTACTO -->
-        <section class="seccion contacto" id="contacto">
+        <div class="encabezado-seccion">
+            <span class="etiqueta">SOBRE ESTA GUÍA</span>
 
-            <div class="contenedor contacto-grid">
+            <h2>Una página creada para ayudarte a viajar mejor.</h2>
 
-                <div>
+            <p>
+                Creé este espacio para compartir información sencilla,
+                consejos y herramientas que pueden ayudarte a tomar mejores
+                decisiones antes de cada viaje.
+            </p>
+        </div>
 
-                    <span class="etiqueta">
-                        INFORMACIÓN CORPORATIVA
-                    </span>
+        <div class="sobre-grid">
 
-                    <h2>
-                        VALMO TOTAL SERVICES SAS
-                    </h2>
-
-                    <p>
-                        Información y orientación para ayudarte a viajar
-                        con mayor conocimiento.
-                    </p>
-
-                </div>
-
-                <div class="datos">
-
-                    <div class="dato">
-
-                        <span>
-                            Dirección
-                        </span>
-
-                        <strong>
-                            CL 30 44 80 LC 6 SAN DIEGO
-                        </strong>
-
-                    </div>
-
-                    <div class="dato">
-
-                        <span>
-                            Municipio
-                        </span>
-
-                        <strong>
-                            Armenia, Quindío
-                        </strong>
-
-                    </div>
-
-                    <div class="dato">
-
-                        <span>
-                            NIT
-                        </span>
-
-                        <strong>
-                            900591806-9
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="contenedor footer-grid">
-
-            <div>
-
-                <strong>
-                    VALMO TOTAL SERVICES SAS
-                </strong>
-
+            <article>
+                <span>01</span>
+                <h3>Información sencilla</h3>
                 <p>
-                    Aprende · Prepárate · Viaja mejor
+                    Explicaciones claras sobre vuelos, equipaje,
+                    aeropuertos y planificación.
                 </p>
+            </article>
 
-            </div>
+            <article>
+                <span>02</span>
+                <h3>Consejos prácticos</h3>
+                <p>
+                    Recomendaciones que puedes tener en cuenta antes
+                    de comprar o preparar un viaje.
+                </p>
+            </article>
 
-            <div class="footer-derecha">
-
-                <span>
-                    Armenia · Quindío · Colombia
-                </span>
-
-                <span>
-                    NIT 900591806-9
-                </span>
-
-            </div>
+            <article>
+                <span>03</span>
+                <h3>Viaja con más confianza</h3>
+                <p>
+                    Conocer mejor cada paso puede ayudarte a evitar
+                    errores y disfrutar más tu experiencia.
+                </p>
+            </article>
 
         </div>
 
-    </footer>
+    </div>
+</section>
+
+    </main>
+
+<section class="perspectiva" id="sobre">
+
+    <div class="contenedor perspectiva-contenido">
+
+        <span>UNA NUEVA PERSPECTIVA</span>
+
+        <h2>
+            Convierte tus viajes en grandes historias
+        </h2>
+
+        <p>
+            Aquí encontrarás guías, consejos y herramientas prácticas
+            para planear, descubrir y disfrutar cada destino
+            con más confianza.
+        </p>
+
+    </div>
+
+</section>
+
+      <footer class="footer-viaja">
+
+    <div class="contenedor footer-viaja-arriba">
+
+        <div class="footer-marca">
+            <strong>Viaja Mejor</strong>
+            <span>Guía para aprender a viajar</span>
+        </div>
+
+        <nav class="footer-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#aprender">Aprende</a>
+            <a href="#vuelos">Vuelos</a>
+            <a href="#seguridad">Seguridad</a>
+            <a href="#destinos">Destinos</a>
+        </nav>
+
+    </div>
+
+    <div class="contenedor footer-linea">
+
+        <p>
+            © 2026 Viaja Mejor
+        </p>
+
+        <p>
+            La información publicada tiene fines educativos e informativos.
+            Precios, requisitos y condiciones pueden cambiar.
+        </p>
+
+    </div>
+
+</footer>
 
 
     <!-- PANEL EDUCATIVO -->
