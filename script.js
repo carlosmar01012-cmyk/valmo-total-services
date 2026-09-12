@@ -1,4 +1,8 @@
- const menuMovil = document.getElementById("menuMovil");
+  /* =========================
+   ELEMENTOS
+========================= */
+
+const menuMovil = document.getElementById("menuMovil");
 const menu = document.getElementById("menu");
 
 const modal = document.getElementById("modal");
@@ -13,15 +17,27 @@ const modalContenido = document.getElementById("modalContenido");
    MENÚ MÓVIL
 ========================= */
 
-menuMovil.addEventListener("click", () => {
-    menu.classList.toggle("activo");
-});
+if (menuMovil && menu) {
 
-document.querySelectorAll(".menu a").forEach((enlace) => {
-    enlace.addEventListener("click", () => {
-        menu.classList.remove("activo");
+    menuMovil.addEventListener("click", () => {
+
+        menu.classList.toggle("activo");
+        menuMovil.classList.toggle("activo");
+
     });
-});
+
+    document.querySelectorAll(".menu-viaja a").forEach((enlace) => {
+
+        enlace.addEventListener("click", () => {
+
+            menu.classList.remove("activo");
+            menuMovil.classList.remove("activo");
+
+        });
+
+    });
+
+}
 
 
 /* =========================
@@ -34,9 +50,7 @@ const informacion = {
         etiqueta: "ANTES DE COMPRAR",
         titulo: "Cómo elegir mejor un vuelo",
         contenido: `
-            <p>
-                Antes de comprar, compara más que el precio.
-            </p>
+            <p>Antes de comprar, compara más que el precio.</p>
 
             <ul>
                 <li>Revisa si incluye equipaje.</li>
@@ -53,9 +67,7 @@ const informacion = {
         etiqueta: "EQUIPAJE",
         titulo: "Entiende qué puedes llevar",
         contenido: `
-            <p>
-                No todas las tarifas incluyen el mismo equipaje.
-            </p>
+            <p>No todas las tarifas incluyen el mismo equipaje.</p>
 
             <ul>
                 <li><strong>Artículo personal:</strong> bolso pequeño o mochila.</li>
@@ -64,7 +76,8 @@ const informacion = {
             </ul>
 
             <p>
-                Siempre revisa las medidas y el peso permitido por tu aerolínea.
+                Siempre revisa las medidas y el peso permitido
+                por tu aerolínea.
             </p>
         `
     },
@@ -101,7 +114,8 @@ const destinos = {
         titulo: "Cancún",
         contenido: `
             <p>
-                Cancún combina playas, turismo y alta demanda durante buena parte del año.
+                Cancún combina playas, turismo y alta demanda
+                durante buena parte del año.
             </p>
 
             <ul>
@@ -118,7 +132,8 @@ const destinos = {
         titulo: "Cartagena",
         contenido: `
             <p>
-                Cartagena es uno de los destinos turísticos más visitados de Colombia.
+                Cartagena es uno de los destinos turísticos
+                más visitados de Colombia.
             </p>
 
             <ul>
@@ -135,7 +150,8 @@ const destinos = {
         titulo: "Madrid",
         contenido: `
             <p>
-                Los viajes internacionales requieren mayor preparación y revisión documental.
+                Los viajes internacionales requieren mayor preparación
+                y revisión documental.
             </p>
 
             <ul>
@@ -156,6 +172,8 @@ const destinos = {
 
 function abrirModal(etiqueta, titulo, contenido) {
 
+    if (!modal) return;
+
     modalEtiqueta.textContent = etiqueta;
     modalTitulo.textContent = titulo;
     modalContenido.innerHTML = contenido;
@@ -163,6 +181,7 @@ function abrirModal(etiqueta, titulo, contenido) {
     modal.classList.add("activo");
 
     document.body.style.overflow = "hidden";
+
 }
 
 
@@ -172,17 +191,14 @@ document.querySelectorAll("[data-panel]").forEach((boton) => {
 
     boton.addEventListener("click", () => {
 
-        const clave = boton.dataset.panel;
-        const datos = informacion[clave];
+        const datos = informacion[boton.dataset.panel];
 
         if (datos) {
-
             abrirModal(
                 datos.etiqueta,
                 datos.titulo,
                 datos.contenido
             );
-
         }
 
     });
@@ -190,23 +206,20 @@ document.querySelectorAll("[data-panel]").forEach((boton) => {
 });
 
 
-/* BOTONES DE DESTINOS */
+/* BOTONES DESTINOS */
 
 document.querySelectorAll("[data-destino]").forEach((boton) => {
 
     boton.addEventListener("click", () => {
 
-        const clave = boton.dataset.destino;
-        const datos = destinos[clave];
+        const datos = destinos[boton.dataset.destino];
 
         if (datos) {
-
             abrirModal(
                 datos.etiqueta,
                 datos.titulo,
                 datos.contenido
             );
-
         }
 
     });
@@ -220,22 +233,33 @@ document.querySelectorAll("[data-destino]").forEach((boton) => {
 
 function cerrarVentana() {
 
+    if (!modal) return;
+
     modal.classList.remove("activo");
 
     document.body.style.overflow = "";
+
 }
 
 
-cerrarModal.addEventListener("click", cerrarVentana);
+if (cerrarModal) {
+
+    cerrarModal.addEventListener("click", cerrarVentana);
+
+}
 
 
-modal.addEventListener("click", (evento) => {
+if (modal) {
 
-    if (evento.target === modal) {
-        cerrarVentana();
-    }
+    modal.addEventListener("click", (evento) => {
 
-});
+        if (evento.target === modal) {
+            cerrarVentana();
+        }
+
+    });
+
+}
 
 
 document.addEventListener("keydown", (evento) => {
